@@ -1,0 +1,13 @@
+{
+  "name": "pi-cache-ttl-extension",
+  "version": "0.1.0",
+  "description": "Footer countdown to prompt-cache expiry for pi",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["./extensions"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  }
+}
