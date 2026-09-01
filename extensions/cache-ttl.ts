@@ -80,10 +80,10 @@ export default function (pi: ExtensionAPI) {
 		}
 	};
 
-	const cacheField = (ctx: ExtensionContext): { text: string; color: "dim" | "warning" | "muted" } | undefined => {
+	const cacheField = (ctx: ExtensionContext): { text: string; color: "dim" | "warning" | "error" } | undefined => {
 		if (running || lastRequestAt === undefined || !cacheReported) return undefined;
 		const remaining = lastRequestAt + ttlMs(ctx) - Date.now();
-		if (remaining <= 0) return { text: "cold", color: "muted" };
+		if (remaining <= 0) return { text: "cold", color: "error" };
 		return { text: formatRemaining(remaining), color: remaining < 60_000 ? "warning" : "dim" };
 	};
 
